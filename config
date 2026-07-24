@@ -4,7 +4,7 @@ floating_modifier $mod
 
 # start a terminal
 set $term alacritty
-bindsym $mod+q exec $term
+bindsym $mod+q exec $term -e nvim
 bindsym $mod+e exec thunar
 
 # kill focused window
@@ -120,7 +120,7 @@ bindsym $mod+u mode "resize"
 #
 # Status Bar:
 #
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id $POLYBAR_COLLECTION/launch.sh
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #000000 #000000 #ffffff #000000   #000000
@@ -211,7 +211,7 @@ workspace 7 output DP-0
 workspace 8 output DP-0 
 workspace 10 output DP-0 
 
-exec feh --bg-fill ~/.config/i3/wallpaper.png
+exec --no-startup-id feh --bg-fill ~/.config/i3/wallpaper2.jpg
 
 exec --no-startup-id dunst
 exec --no-startup-id picom
@@ -227,4 +227,3 @@ bindsym Ctrl+Print exec --no-startup-id maim ~/Pictures/$(date +%F-%T).png && xc
 
 # Выделенная область в буфер обмена
 bindsym Ctrl+Shift+Print exec --no-startup-id maim -s | xclip -selection clipboard -t image/png
-
