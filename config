@@ -120,7 +120,8 @@ bindsym $mod+u mode "resize"
 #
 # Status Bar:
 #
-exec_always --no-startup-id $POLYBAR_COLLECTION/launch.sh
+#exec_always --no-startup-id $POLYBAR_COLLECTION/launch.sh
+exec_always --no-startup-id /home/fanzi03/.config/polybar/launch.sh
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #000000 #000000 #ffffff #000000   #000000
