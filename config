@@ -5,6 +5,7 @@ floating_modifier $mod
 # start a terminal
 set $term alacritty
 bindsym $mod+q exec $term -e nvim
+
 bindsym $mod+e exec thunar
 
 # kill focused window
@@ -121,7 +122,8 @@ bindsym $mod+u mode "resize"
 # Status Bar:
 #
 #exec_always --no-startup-id $POLYBAR_COLLECTION/launch.sh
-exec_always --no-startup-id /home/fanzi03/.config/polybar/launch.sh
+exec_always --no-startup-id /home/fanzi03/.config/polybar/launch.sh --cuts
+
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #000000 #000000 #ffffff #000000   #000000
@@ -212,7 +214,7 @@ workspace 7 output DP-0
 workspace 8 output DP-0 
 workspace 10 output DP-0 
 
-exec --no-startup-id feh --bg-fill ~/.config/i3/wallpaper2.jpg
+exec --no-startup-id feh --bg-fill /home/fanzi03/.config/i3/wallpaper3.jpg
 
 exec --no-startup-id dunst
 exec --no-startup-id picom
