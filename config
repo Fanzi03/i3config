@@ -4,7 +4,8 @@ floating_modifier $mod
 
 # start a terminal
 set $term alacritty
-bindsym $mod+q exec $term -e nvim
+bindsym $mod+q exec $term  -e nvim
+bindsym $mod+Shift+l exec $term
 bindsym $mod+e exec thunar
 
 # kill focused window
@@ -46,7 +47,7 @@ bindsym $mod+k layout toggle split
 bindsym $mod+Shift+w sticky toggle
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+space floating toggle # this is change the tiling
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
