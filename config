@@ -14,7 +14,7 @@ bindsym $mod+c kill
 # start dmenu (a program launcher)
 #bindsym ctrl+space exec rofi -show run
 bindsym $mod+r exec "rofi -show drun" 
-bindsym $mod+r+alt exec "rofi -show combi -modi window,run,combi -combi-modi window,run"
+bindsym $mod+Shift+r exec "rofi -show combi -modi window,run,combi -combi-modi window,run"
 #bindsym ctrl+space exec dmenu_run
 
 # alternatively, you can use the cursor keys:
@@ -199,22 +199,38 @@ bindsym $mod+l exec "sleep 0.1 && i3lock --blur 5"
 
 #exec_always setxkbmap -option grp:caps_toggle "us,ru" -option "grp:caps_toggle,grp_led:caps"
 
-exec xrandr --output HDMI-1 --mode 1920x1080 --rate 60 --scale 1x1
-exec xrandr --output DP-0 --mode 1920x1080 --rate 180 --scale 1x1
+# to check monitors use xrandr --query
+#To disable it, I use xrandr --output LVDS-1-1 --mode 1920x1080 --output VGA-0 --off
+exec xrandr --output LVDS-1-1 --mode 1024x768 --rate 60 --scale 1x1 --left-of eDP 
+exec xrandr --output VGA-0 --mode 1024x768 --rate 60 --scale 1x1 --left-of eDP 
+exec xrandr --output HDMI-1 --mode 1024x768 --rate 60 --scale 1x1 --left-of eDP 
+exec xrandr --output eDP --primary --mode 1920x1080 --rate 60 --scale 1x1
+exec xrandr --output HDMI-0 --mode 1920x1080 --rate 60 --scale 1x1 --right-of eDP
+#exec xrandr --output DP-0 --mode 1920x1080 --rate 180 --scale 1x1
 
-workspace 9 output HDMI-1 
+workspace 9 output HDMI-0
 
-workspace 1 output DP-0 
-workspace 2 output DP-0 
-workspace 3 output DP-0 
-workspace 4 output DP-0 
-workspace 5 output DP-0 
-workspace 6 output DP-0 
-workspace 7 output DP-0 
-workspace 8 output DP-0 
-workspace 10 output DP-0 
+#workspace 1 output DP-0 
+#workspace 2 output DP-0 
+#workspace 3 output DP-0 
+#workspace 4 output DP-0 
+#workspace 5 output DP-0 
+#workspace 6 output DP-0 
+#workspace 7 output DP-0 
+#workspace 8 output DP-0 
+#workspace 10 output DP-0 
 
-exec --no-startup-id feh --bg-fill /home/fanzi03/.config/i3/wallpaper3.jpg
+workspace 1 output eDP 
+workspace 2 output eDP
+workspace 3 output eDP
+workspace 4 output eDP
+workspace 5 output eDP
+workspace 6 output eDP
+workspace 7 output eDP
+workspace 8 output eDP
+workspace 10 output eDP
+
+exec --no-startup-id feh --bg-fill /home/fanzi03/.config/i3/long_way.jpg
 
 exec --no-startup-id dunst
 exec --no-startup-id picom
